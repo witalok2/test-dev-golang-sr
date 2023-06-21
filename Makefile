@@ -1,6 +1,3 @@
-# Load enviroment variables
-include .env
-
 # Export enviroment variables to commands
 export
 
@@ -8,7 +5,8 @@ export
 go_cover_file=coverage.out
 
 up:: ## Up containers from Docker compose
-	@ docker-compose up -d
+	@ git submodule update --init --recursive --remote
+	@ docker-compose up --build
 
 down:: ## Down local development enviroment
 	@ docker-compose down --remove-orphans

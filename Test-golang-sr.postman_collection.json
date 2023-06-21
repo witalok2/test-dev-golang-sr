@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "e074866d-3426-45da-81d3-5bc945988680",
+		"name": "Test-golang-sr",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18642026"
+	},
+	"item": [
+		{
+			"name": "Create Client",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"witalo\",\n    \"lastName\": \"matheus\",\n    \"contact\": \"+5565992526018\",\n    \"address\": \"centro\",\n    \"brithday\": \"1996-02-04\",\n    \"cpf\": \"0509869184\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Client",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"witalo\",\n    \"lastName\": \"silva\",\n    \"contact\": \"+5565992526018\",\n    \"address\": \"centro\",\n    \"brithday\": \"1996-02-04\",\n    \"cpf\": \"0509869183\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/client/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"client",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "d538f318-21f3-4919-a5bd-3c08ba3486cc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Client",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/client/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"client",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "d538f318-21f3-4919-a5bd-3c08ba3486cc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Client",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/v1/client/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"v1",
+						"client",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Clients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/client?page=1&limit=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"client"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

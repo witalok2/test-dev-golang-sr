@@ -33,6 +33,47 @@ services:
     networks:
       - database-compose-network
 
+  app:
+    build:
+      context: ./app/deployment
+      args:
+        - GITHUB_TOKEN=<seu_token>
+        - DATABASE_URL=postgres://postgres:postgres@localhost:5432/postgres?sslmode=disable
+        - RABBITMQ_URI=amqp://rabbitmquser:rabbitmqpassword@localhost:5672/
+        - QUEUE_NAME=clients
+        - ROUTING_KEY=mapping.position
+        - EXCHANGE_NAME=clients
+        - EXCHANGE_TYPE=direct
+    ports:
+      - 8080:8080
+    environment:
+      - GAE_ENV=production
+    depends_on:
+      - database
+      - rabbitmq
+    restart: always
+    networks:
+      - database-compose-network
+    
+  worker:
+    build:
+      context: ./worker/deployment
+      args:
+        - GITHUB_TOKEN=<seu_token>
+        - DATABASE_URL=postgres://postgres:postgres@localhost:5432/postgres?sslmode=disable
+        - RABBITMQ_URI=amqp://rabbitmquser:rabbitmqpassword@localhost:5672/
+        - QUEUE_NAME=clients
+    ports:
+      - 8081:8081
+    environment:
+      - GAE_ENV=production
+    depends_on:
+      - database
+      - rabbitmq
+    restart: always
+    networks:
+      - database-compose-network
+
 networks:
   database-compose-network:
     driver: bridge

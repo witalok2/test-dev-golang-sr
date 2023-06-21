@@ -1,0 +1,42 @@
+version: "3.3"
+
+services:
+  database:
+    image: postgis/postgis:12-3.0
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./postgresql:/docker-entrypoint-initdb.d:ro
+    restart: always
+    networks:
+      - database-compose-network
+
+  rabbitmq:
+    image: rabbitmq:3.9-management
+    container_name: rabbitmq_management
+    ports:
+      - 5672:5672
+      - 15672:15672
+    environment:
+      RABBITMQ_DEFAULT_USER: rabbitmquser
+      RABBITMQ_DEFAULT_PASS: rabbitmqpassword
+      RABBITMQ_QUEUE_NAME: clients
+      RABBITMQ_QUEUE_DURABLE: "true"
+    # volumes:
+    #   - ./definitions.json:/etc/definitions.json
+    # command: rabbitmq-server --load-definitions /etc/definitions.json
+    restart: always
+    networks:
+      - database-compose-network
+
+networks:
+  database-compose-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local

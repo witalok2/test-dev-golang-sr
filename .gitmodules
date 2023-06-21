@@ -1,0 +1,6 @@
+[submodule "app"]
+	path = app
+	url = https://github.com/witalok2/test-dev-golang-api.git
+[submodule "worker"]
+	path = worker
+	url = https://github.com/witalok2/test-dev-golang-worker.git

@@ -70,5 +70,5 @@ The applications have a cloud-build.yaml file with a preliminary configuration f
    git submodule add https://github.com/witalok2/test-dev-golang-api.git ./app
    git submodule add https://github.com/witalok2/test-dev-golang-worker.git ./worker
  ```
-
+##  Video Demo
 [![Demo](https://developers.redhat.com/sites/default/files/styles/article_feature/public/blog/2020/12/2020_Stateful_Golang_Kubernetes_Shared_image_A.png?itok=xaQpJG1L)](https://www.youtube.com/watch?v=p5R_FP-uTH8&ab_channel=WitaloMatheus)

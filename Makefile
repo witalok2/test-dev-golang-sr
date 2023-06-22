@@ -11,10 +11,6 @@ up:: ## Up containers from Docker compose
 down:: ## Down local development enviroment
 	@ docker-compose down --remove-orphans
 
-test:: ## Do the tests in go
-	@ git submodule update --init --recursive --remote
-	@ go test -race -coverprofile $(go_cover_file) ./...
-
 deps:: ## Download submodule dependencies
 	git submodule update --init --recursive --remote
 

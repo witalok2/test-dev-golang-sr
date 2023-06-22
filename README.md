@@ -66,5 +66,7 @@ The API and the worker are in separate repositories. This repository uses git su
 
 The applications have a cloud-build.yaml file with a preliminary configuration for deployment using GCP. It uses triggers to monitor the repository, Cloud Build, and secrets to run securely.
 
-# git submodule add https://github.com/witalok2/test-dev-golang-api.git ./app
-# git submodule add https://github.com/witalok2/test-dev-golang-worker.git ./worker
+git submodule add https://github.com/witalok2/test-dev-golang-api.git ./app
+git submodule add https://github.com/witalok2/test-dev-golang-worker.git ./worker
+
+https://www.youtube.com/watch?v=p5R_FP-uTH8&ab_channel=WitaloMatheus

@@ -69,4 +69,4 @@ The applications have a cloud-build.yaml file with a preliminary configuration f
 git submodule add https://github.com/witalok2/test-dev-golang-api.git ./app
 git submodule add https://github.com/witalok2/test-dev-golang-worker.git ./worker
 
-https://www.youtube.com/watch?v=p5R_FP-uTH8&ab_channel=WitaloMatheus
+[https://www.youtube.com/watch?v=p5R_FP-uTH8&ab_channel=WitaloMatheus](https://www.youtube.com/watch?v=p5R_FP-uTH8&ab_channel=WitaloMatheus)https://www.youtube.com/watch?v=p5R_FP-uTH8&ab_channel=WitaloMatheus
